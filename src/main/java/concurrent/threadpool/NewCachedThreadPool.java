@@ -15,10 +15,15 @@ public class NewCachedThreadPool {
         final Future<String>future2=executorService.submit(new MyTask());
         final Future<String>future3=executorService.submit(new MyTask());
         List<Future<String>> futures=new ArrayList<Future<String>>(){{
-            add(future0);
+            int i=0;
+            while (i<1000){
+                add(future1);
+                i++;
+            }
+/*            add(future0);
             add(future1);
             add(future2);
-            add(future3);
+            add(future3);*/
         }};
         while (true){
             Future<String>tmp=null;

@@ -30,5 +30,13 @@
         <servlet-name>service</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>simpleSuspendResumeServlet</servlet-name>
+        <servlet-class>continuation.SimpleSuspendResumeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>simpleSuspendResumeServlet</servlet-name>
+        <url-pattern>/continuation</url-pattern>
+    </servlet-mapping>
 
 </web-app>

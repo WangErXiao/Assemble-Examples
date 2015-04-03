@@ -146,6 +146,13 @@
             <version>3.3.0</version>
         </dependency>
 
+        <!--  ehcache  -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
         <!-- Protostuff -->
         <dependency>
             <groupId>com.dyuproject.protostuff</groupId>

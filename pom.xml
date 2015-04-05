@@ -152,6 +152,12 @@
             <artifactId>ehcache</artifactId>
             <version>1.6.1</version>
         </dependency>
+        <!--cryptix-jce-provider -->
+        <dependency>
+            <groupId>cryptix-jce-provider</groupId>
+            <artifactId>cryptix-jce-provider</artifactId>
+            <version>1.2.2</version>
+        </dependency>
 
         <!-- Protostuff -->
         <dependency>

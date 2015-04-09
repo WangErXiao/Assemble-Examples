@@ -158,6 +158,12 @@
             <artifactId>cryptix-jce-provider</artifactId>
             <version>1.2.2</version>
         </dependency>
+        <!--apache common lang-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
 
         <!-- Protostuff -->
         <dependency>

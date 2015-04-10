@@ -20,7 +20,6 @@ public class TestClient {
         Method mdDefineClass = java.lang.ClassLoader.class.getDeclaredMethod("defineClass",
                 String.class, byte[].class, int.class, int.class);
         mdDefineClass.setAccessible(true);
-
         InputStream is = Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("reflect/asm/TestBean.class");
 
@@ -34,8 +33,9 @@ public class TestClient {
         ClassLoader loader=Thread.currentThread().getContextClassLoader();
         mdDefineClass.invoke(loader,"reflect.asm.TestBean_Tmp",code,0,code.length);
         Class<?> c = Class.forName("reflect.asm.TestBean_Tmp");
-        TestBean testBean = (TestBean)c.newInstance();
-        testBean.helloAop();
+        Object testBean = c.newInstance();
+        Method helloAop=TestBean.class.getDeclaredMethod("helloAop");
+        helloAop.invoke(testBean);
 
     }
 }

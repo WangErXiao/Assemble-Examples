@@ -17,7 +17,7 @@ public class LoadProxyClass {
             enhancer.setSuperclass(Target.class);
             enhancer.setUseCache(false);
             enhancer.setCallback(new MethodInterceptor() {
-                @Override
+
                 public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
                     return methodProxy.invoke(o,objects);
                 }

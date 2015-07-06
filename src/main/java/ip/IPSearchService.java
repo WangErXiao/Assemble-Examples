@@ -11,19 +11,17 @@ import java.net.InetAddress;
 public class IPSearchService {
 
     public static void main(String[]args){
-        IPSearchService ipSearchService=new IPSearchService();
         try {
-            String dbfile =ipSearchService.getClass().getResource("/").getPath()+"ip/GeoLiteCity.dat";
+            String dbfile =Thread.currentThread().getClass().getResource("/").getPath()+"ip/GeoLiteCity.dat";
             LookupService cl = new LookupService(dbfile, LookupService.GEOIP_MEMORY_CACHE);
-
             InetAddress inetAddress = InetAddress.getByName("183.156.99.131");
             System.out.println(cl.getLocation(inetAddress).countryCode);
             System.out.println(cl.getLocation(inetAddress).area_code);
             System.out.println(cl.getLocation(inetAddress).city);
             System.out.println(cl.getLocation(inetAddress).region);
             System.out.println(cl.getLocation(inetAddress).dma_code);
-            System.out.println(cl.getLocation("218.28.2.111").latitude);
-            System.out.println(cl.getLocation("218.28.2.111").longitude);
+            System.out.println(cl.getLocation("183.156.99.131").latitude);
+            System.out.println(cl.getLocation("183.156.99.131").longitude);
             cl.close();
         }catch (IOException e) {
             e.printStackTrace();

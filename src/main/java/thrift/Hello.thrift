@@ -1,4 +1,5 @@
  namespace java thrift
+ namespace go thrift
  service Hello{
 
   string helloString(1:string para)

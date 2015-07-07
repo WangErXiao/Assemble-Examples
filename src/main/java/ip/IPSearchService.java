@@ -11,6 +11,8 @@ import java.net.InetAddress;
 public class IPSearchService {
 
     public static void main(String[]args){
+
+        System.out.println(null+""+null);
         try {
             String dbfile =Thread.currentThread().getClass().getResource("/").getPath()+"ip/GeoLiteCity.dat";
             LookupService cl = new LookupService(dbfile, LookupService.GEOIP_MEMORY_CACHE);

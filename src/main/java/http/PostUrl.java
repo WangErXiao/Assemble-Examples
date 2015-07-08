@@ -30,7 +30,7 @@ public class PostUrl {
     private static Map<String,Integer>IP_PORTS=new HashMap<>();
     private static List<String>IP_LIST=new ArrayList<>();
     static {
-        File file=new File("/Users/yao/tmp/ip3.txt");
+        File file=new File("/Users/yao/tmp/ip4.txt");
         BufferedReader reader= null;
         try {
             reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
@@ -55,15 +55,18 @@ public class PostUrl {
 
         //对应表
         Map<String,String> imgs=new HashMap<>();
-        imgs.put("海龟","hg01");
-        imgs.put("大熊猫","dxm02");
-        imgs.put("大象","dx03");
-        imgs.put("骆驼","lt04");
-        imgs.put("金丝猴", "jsh05");
-        imgs.put("藏羚羊","zly06");
-
-
-
+        imgs.put("海龟","dienskiden");
+        imgs.put("大熊猫","dopkdmemj");
+        imgs.put("大象","kdjieoemd");
+        imgs.put("骆驼","djildmc");
+        imgs.put("金丝猴", "peicjed");
+        imgs.put("藏羚羊","xjeifhjske");
+        //"xjeifhjske",
+        //"dienskiden",
+        //"djildmc",
+        //"kdjieoemd"
+        //"dopkdmemj",
+        //"peicjed",
 
         for(int i=50;i<256000;i++){
 
@@ -106,7 +109,10 @@ public class PostUrl {
                 if (jsonObject != null && jsonObject.get("msgCode") != null && jsonObject.get("msgCode").toString().equals("309")) {
                     String pic = ((Map) jsonObject.get("data")).get("pic_name").toString();
                     String codeStr = imgs.get(pic);
-                    url += codeStr;
+
+                    List<String> mds =(List<String>)((Map) jsonObject.get("data")).get("mds");
+                    List<String> pics =(List<String>)((Map) jsonObject.get("data")).get("pics");
+                    url += mds.get(pics.indexOf(codeStr));
                     System.out.println(postUrl(url, null, cookieStore, i));
                 }
             }catch (Exception e){

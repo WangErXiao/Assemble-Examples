@@ -13,6 +13,7 @@ public class AppendableTest {
         appendable.append("abcdefg");
         System.out.println(appendable.toString());
 
+        System.out.println(~1);
 
     }
 }

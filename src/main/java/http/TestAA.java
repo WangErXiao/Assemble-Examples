@@ -16,5 +16,10 @@ public class TestAA {
 
 
         System.out.println(System.currentTimeMillis()/1000);
+
+        System.out.println(2>>>1);
+
+        System.out.println( 16|50);
+
     }
 }

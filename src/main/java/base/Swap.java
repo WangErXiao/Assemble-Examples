@@ -16,8 +16,14 @@ public class Swap {
 
         String str1="a";
         String str2="c";
-        swap(str1,str2);
-        System.out.println("str1="+str1+" str2="+str2);
+        swap(str1, str2);
+        System.out.println("str1=" + str1 + " str2=" + str2);
+
+        Integer xx1=new Integer(1111);
+        Integer xx2=new Integer(1111);
+        System.out.println(xx1.hashCode());
+        System.out.println(xx2.hashCode());
+
 
     }
     //无效

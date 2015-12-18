@@ -21,5 +21,11 @@ public class TestAA {
 
         System.out.println( 16|50);
 
+
+        String a="a"+"b";
+
+        String b="ab";
+        System.out.println(a==b);
+
     }
 }

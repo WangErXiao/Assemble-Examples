@@ -1,0 +1,15 @@
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+/.DS_store
+maven-eclipse.xml
+target/
+src/main/webapp/WEB-INF/velocity/system/*.vm
+
+.DS_Store/catalina.base_IS_UNDEFINED/
+/catalina.base_IS_UNDEFINED/
+/catalina.base_IS_UNDEFINED/
+src/main/webapp/WEB-INF/velocity/version.vm
+**/.DS_Store

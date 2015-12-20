@@ -25,6 +25,7 @@ public class RateLimterTest {
     }
     public static void main(String[]args) throws InterruptedException {
         RateLimterTest test=new RateLimterTest();
+        Thread.sleep(1000*1000);
         Runnable runnable=new Runnable() {
             @Override
             public void run() {

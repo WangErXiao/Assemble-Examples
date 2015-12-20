@@ -15,3 +15,9 @@ public class DumpOOM {
         }
     }
 }
+/*
+*
+* java -XX:+PrintFlagsFinal | less
+ 打印出所有的参数
+*
+* */

@@ -19,11 +19,49 @@ public class ScheduledExecutorServiceTest {
             }
         });*/
         ScheduledExecutorService  executorService= Executors.newSingleThreadScheduledExecutor();
+        // 不会把任务执行的时间算进去,到点就起线程运行任务
         executorService.scheduleAtFixedRate(new Runnable() {
             @Override
             public void run() {
-                System.out.println("---------------");
+                System.out.println("--------------- start 1-----");
+                try {
+                    TimeUnit.SECONDS.sleep(5);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("--------------- end 1-----");
             }
-        },1000,1000, TimeUnit.MILLISECONDS);
+        },4,4, TimeUnit.SECONDS);
+
+        // 会把任务执行时间算进去，一个任务执行完后＋延迟时间  才去执行另外一个任务 单线程即可搞定
+
+        executorService.scheduleWithFixedDelay(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("--------------- start 2-----");
+                try {
+                    TimeUnit.SECONDS.sleep(5);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("--------------- end 2-----");
+            }
+        },4,4, TimeUnit.SECONDS);
+
+
+
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
 }
